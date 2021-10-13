@@ -1,6 +1,12 @@
-<h1>Parrent Component</h1>
-<input type="text" #box/>
-<button (click)="getVal(box.value)">Get Value</button>
-<h2>{{currentVal}}</h2>
+<body>
+    <h1>Kliknij przycisk aby uzyskać losowe zdjęcie</h1>
+    <button (click)="request()">uzyskaj dane</button>
+    <div>
+        <img id="result"/>
+    </div>
+</body>
+
+
+<!--<h2>{{currentVal}}</h2>-->
 
 <router-outlet></router-outlet>
