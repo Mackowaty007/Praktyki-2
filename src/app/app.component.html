@@ -1,8 +1,30 @@
 <body>
-    <h1>Kliknij przycisk aby uzyskać losowe zdjęcie</h1>
-    <button (click)="request()">uzyskaj dane</button>
+    <h1>wpisz numer komentaża który chcesz zobaczyć (od 1 do 100)</h1>
+    <input type="number" id="myText"> 
+    <button type="button" (click)="request()">uzyskaj dane</button>
     <div>
-        <img id="result"/>
+        <table>
+            <tr>
+                <th>numer posta</th>
+                <th id="postId">np. 42</th>
+            </tr>
+            <tr>
+                <th>id komentaża</th>
+                <th id="id">np. 42</th>
+            </tr>
+            <tr>
+                <th>imię</th>
+                <th id="name">np. Mateusz</th>
+            </tr>
+            <tr>
+                <th>email</th>
+                <th id="email">np. asdf@gmail.com</th>
+            </tr>
+            <tr>
+                <th>komentaż</th>
+                <th id="body">np. aaaaaaaaaaaaaa</th>
+            </tr>
+        </table>
     </div>
 </body>
 

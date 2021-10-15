@@ -6,21 +6,39 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = "kliknij przycisk aby uzyskać losowe zdjęcie"
+  title = "tabela"
   request(){
-    var randomID:number = Math.floor(Math.random() * 5000);
-
-    var pathToPhoto = 'https://jsonplaceholder.typicode.com/photos/' + randomID.toString()
-
+    var idPosta = (<HTMLInputElement>document.getElementById("myText")).value;
+    console.log(idPosta)
+    var pathToPhoto = 'https://jsonplaceholder.typicode.com/comments/1'
+    if(idPosta != null){
+      pathToPhoto = 'https://jsonplaceholder.typicode.com/comments/' + idPosta.toString()
+    }
     fetch(pathToPhoto)
     .then(function(response){
       return response.json()
     })
     .then((response) => {
       console.log(response)
-      var result = document.getElementById('result')
-      if(result != null){
-        result.setAttribute( 'src', response.url);
+      var postId = document.getElementById('postId')
+      var id = document.getElementById('id')
+      var name = document.getElementById('name')
+      var email = document.getElementById('email')
+      var body = document.getElementById('body')
+      if(postId != null ){
+        postId.innerHTML = response.postId
+      }
+      if(id != null ){
+        id.innerHTML = response.id
+      }
+      if(name != null ){
+        name.innerHTML = response.name
+      }
+      if(email != null ){
+        email.innerHTML = response.email
+      }
+      if(body != null ){
+        body.innerHTML = response.body
       }
     })
   }
